@@ -1,14 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
-
-import logo from "../assets/ccs-logo.jpeg";
-import saraswati from "../assets/saraswati.png";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dark, setDark] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const location = useLocation();
 
   // Date display
   const today = new Date().toLocaleDateString("en-IN", {
@@ -18,7 +17,7 @@ function Navbar() {
     day: "numeric",
   });
 
-  // Dark mode + sticky
+  // Dark mode + sticky header
   useEffect(() => {
     document.body.className = dark ? "dark" : "";
 
@@ -30,33 +29,28 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [dark]);
 
+  // CLOSE menu when route changes
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location]);
+
+  // CLOSE MENU manually
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <>
-      {/* TOP INFO BAR */}
-      <div className={styles.topbar}>
-        <p>{today}</p>
-        <span>CCS Central School</span>
-      </div>
-
       {/* HEADER */}
-      <div className={`${styles.topHeader} ${scrolled ? styles.small : ""}`}>
-        {/* LEFT LOGO */}
-        <img src={logo} className={styles.logo} />
-
-        {/* CENTER FULL TITLE */}
+      <div className={styles.topHeader}>
         <div className={styles.fullTitle}>
-          <h1 className={styles.heading1}>CCS Central School</h1>
+          <h1>CCS Central School</h1>
           <p>Himmatpatti, Sahebganj, Bihar</p>
           <span className={styles.badge}>Admission Open 2026</span>
         </div>
-
-        {/* RIGHT IMAGE
-        <img src={saraswati} className={styles.saraswati} /> */}
       </div>
 
       {/* NAVBAR */}
-      <nav className={styles.navbar}>
-        {/* HAMBURGER INSIDE BLUE BAR */}
+      <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
+        {/* HAMBURGER */}
         <div
           className={styles.hamburger}
           onClick={() => setMenuOpen(!menuOpen)}
@@ -64,10 +58,11 @@ function Navbar() {
           ☰
         </div>
 
-        {/* NAV LINKS */}
+        {/* LINKS */}
         <div className={`${styles.links} ${menuOpen ? styles.active : ""}`}>
           <NavLink
             to="/"
+            onClick={closeMenu}
             className={({ isActive }) => (isActive ? styles.activeLink : "")}
           >
             Home
@@ -75,6 +70,7 @@ function Navbar() {
 
           <NavLink
             to="/about"
+            onClick={closeMenu}
             className={({ isActive }) => (isActive ? styles.activeLink : "")}
           >
             About
@@ -82,13 +78,15 @@ function Navbar() {
 
           <NavLink
             to="/teachers"
+            onClick={closeMenu}
             className={({ isActive }) => (isActive ? styles.activeLink : "")}
           >
-            Teachers
+            Faculty & Staff
           </NavLink>
 
           <NavLink
             to="/admission"
+            onClick={closeMenu}
             className={({ isActive }) => (isActive ? styles.activeLink : "")}
           >
             Admission
@@ -96,6 +94,7 @@ function Navbar() {
 
           <NavLink
             to="/notice"
+            onClick={closeMenu}
             className={({ isActive }) => (isActive ? styles.activeLink : "")}
           >
             Notice
@@ -103,12 +102,20 @@ function Navbar() {
 
           <NavLink
             to="/gallery"
+            onClick={closeMenu}
             className={({ isActive }) => (isActive ? styles.activeLink : "")}
           >
             Gallery
           </NavLink>
 
-          <button onClick={() => setDark(!dark)}>
+          {/* THEME BUTTON */}
+          <button
+            className={styles.themeBtn}
+            onClick={() => {
+              setDark(!dark);
+              setMenuOpen(false); // CLOSE MOBILE NAV ALSO
+            }}
+          >
             {dark ? "Light" : "Dark"}
           </button>
         </div>

@@ -1,12 +1,16 @@
-.noticeBar{
+.notice{
   background:#ffcc00;
-  color:#000;
-  padding:8px;
-  font-weight:600;
-  font-size:14px;
+  overflow:hidden;
 }
 
-:global(body.dark) .noticeBar{
-  background:#333;
-  color:white;
+.track{
+  white-space:nowrap;
+  animation:scrollText 18s linear infinite;
+  font-weight:600;
+  padding:10px;
+}
+
+@keyframes scrollText{
+  from{ transform:translateX(100%); }
+  to{ transform:translateX(-100%); }
 }

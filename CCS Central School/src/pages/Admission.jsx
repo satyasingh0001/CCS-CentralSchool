@@ -3,7 +3,6 @@ import styles from "./Admission.module.css";
 
 function Admission(){
 
-  // FORM STATE
   const [formData, setFormData] = useState({
     name:"",
     age:"",
@@ -11,7 +10,6 @@ function Admission(){
     number:""
   });
 
-  // HANDLE INPUT CHANGE
   const handleChange = (e)=>{
     setFormData({
       ...formData,
@@ -19,11 +17,9 @@ function Admission(){
     });
   };
 
-  // SUBMIT FUNCTION
   const handleSubmit = async (e)=>{
     e.preventDefault();
 
-    // WHATSAPP MESSAGE
     const message = `
 New Admission Enquiry
 
@@ -33,23 +29,17 @@ Class: ${formData.class}
 Mobile: ${formData.number}
 `;
 
-    // WHATSAPP REDIRECT
-    const whatsappNumber = "919365180948"; // <-- put school whatsapp number
+    const whatsappNumber = "919365180948";
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(url,"_blank");
 
-    // GOOGLE SHEET SEND (optional)
     await fetch("https://script.google.com/macros/s/AKfycbw_LgwypLZ7MaXTtLBIeZqdQLUVeSI_Q2O97U9eT0PEnJVfYI7edXpIvkm6yBBb432K/exec",{
-  method:"POST",
-  mode:"no-cors", // important
-  headers:{
-    "Content-Type":"application/json"
-  },
-  body:JSON.stringify(formData)
-});
+      method:"POST",
+      mode:"no-cors",
+      headers:{ "Content-Type":"application/json" },
+      body:JSON.stringify(formData)
+    });
 
-
-    // CLEAR FORM
     setFormData({
       name:"",
       age:"",
