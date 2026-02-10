@@ -66,13 +66,13 @@ const teachingStaff = [
     {name:"Mr. Arvind Kumar", subject:"Sanskrit / Hindi Teacher", img:t8},
     {name:"Md. Arshad Ali", subject:"Math & English Teacher", img:t14},
     {name:"Mr. Indrajeet Kumar", subject:"Computer Teacher", img:t7},
-    {name:"Miss Anjali Kumari", subject:"Hindi, English & Math Teacher", img:t5},
-    {name:"Miss Goldi Kumari", subject:"Science Teacher", img:t11},
-    {name:"Miss Sandhya Kumari", subject:"Hindi Teacher", img:t6},
-    {name:"Miss Muskan Kumari", subject:"Math Teacher", img:t9},
-    {name:"Miss Priya Kumari", subject:"English Teacher", img:t10},
-    {name:"Miss Ruchi Kumari", subject:"Math Teacher", img:t12},
-    {name:"Miss Nitu Kumari", subject:"Hindi & English Teacher", img:t13},
+    {name:"Mrs. Anjali Kumari", subject:"Hindi, English & Math Teacher", img:t5},
+    {name:"Mrs Goldi Kumari", subject:"Science Teacher", img:t11},
+    {name:"Miss. Sandhya Kumari", subject:"Hindi Teacher", img:t6},
+    {name:"Miss. Muskan Kumari", subject:"Math Teacher", img:t9},
+    {name:"Miss. Priya Kumari", subject:"English Teacher", img:t10},
+    {name:"Miss. Ruchi Kumari", subject:"Math Teacher", img:t12},
+    {name:"Miss. Nitu Kumari", subject:"Hindi & English Teacher", img:t13},
 ];
 
 
@@ -138,3 +138,4 @@ return(
 }
 
 export default Teachers;
+
