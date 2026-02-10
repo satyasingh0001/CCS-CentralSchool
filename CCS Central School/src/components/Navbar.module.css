@@ -1,0 +1,329 @@
+/* TOP INFO BAR */
+
+.topbar{
+  background:#0d6efd;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  padding:6px 50px;
+  font-size:14px;
+}
+
+/* HEADER */
+
+.topHeader{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 60px;
+  background:white;
+  transition:0.3s;
+}
+
+.small{
+  padding:10px 60px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.left{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.logo{
+  width:70px;
+}
+
+.schoolInfo h1{
+  font-size:32px;
+  margin:0;
+  font-weight:800;
+}
+
+.schoolInfo p{
+  margin:0;
+  font-size:14px;
+  color:#555;
+}
+
+.badge{
+  background:#ff3d00;
+  color:white;
+  padding:4px 10px;
+  font-size:12px;
+  border-radius:5px;
+  margin-top:5px;
+  display:inline-block;
+}
+
+.saraswati{
+  width:80px;
+}
+
+/* NAVBAR */
+
+.navbar{
+  background:#0d6efd;
+  display:flex;
+  justify-content:center;
+  padding:14px;
+  position:sticky;
+  top:0;
+  z-index:999;
+}
+
+/* LINKS */
+
+.links{
+  display:flex;
+  gap:28px;
+  align-items:center;
+}
+
+.links a{
+  color:white;
+  text-decoration:none;
+  font-weight:500;
+}
+
+/* ACTIVE PAGE */
+
+.links a.active{
+  border-bottom:2px solid white;
+}
+
+/* DARK BUTTON */
+
+.links button{
+  background:white;
+  color:#0d6efd;
+  border:none;
+  padding:6px 12px;
+  border-radius:6px;
+}
+
+/* HAMBURGER */
+
+.hamburger{
+  display:none;
+  font-size:26px;
+  color:white;
+  position:absolute;
+  left:20px;
+  cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .hamburger{
+    display:block;
+  }
+
+  .links{
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+    background:#0d6efd;
+    flex-direction:column;
+    gap:20px;
+    padding:20px;
+    display:none;
+  }
+
+  .active{
+    display:flex;
+  }
+
+  .topHeader{
+    flex-direction:column;
+    text-align:center;
+    gap:10px;
+  }
+
+  .schoolInfo h1{
+    font-size:22px;
+  }
+
+  .logo{
+    width:55px;
+  }
+
+  .saraswati{
+    width:50px;
+  }
+
+}
+
+/* DARK MODE */
+
+:global(body.dark) .topHeader{
+  background:#1e1e1e;
+  color:white;
+}
+
+:global(body.dark) .topbar{
+  background:#111;
+}
+
+:global(body.dark) .navbar{
+  background:#000;
+}
+.navbar{
+  background:#0d6efd;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:sticky;
+  top:0;
+  z-index:999;
+  height:60px;
+}
+
+/* hamburger */
+
+.hamburger{
+  display:none;
+  position:absolute;
+  left:18px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:28px;
+  color:white;
+  cursor:pointer;
+}
+
+/* mobile only */
+
+@media(max-width:768px){
+
+  .hamburger{
+    display:block;
+  }
+
+  .links{
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+    background:#0d6efd;
+    flex-direction:column;
+    gap:20px;
+    padding:20px;
+    display:none;
+  }
+
+  .active{
+    display:flex;
+  }
+
+}
+
+
+.topHeader{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:#fff;
+  padding:15px 40px;
+}
+
+/* LEFT LOGO */
+
+.logo{
+  height:100px;
+  width: 80px;
+}
+
+/* RIGHT IMAGE */
+
+.saraswati{
+  height:70px;
+}
+
+/* FULL WIDTH TITLE */
+
+.fullTitle{
+  flex:1;
+  text-align:center;
+}
+
+/* BIG SCHOOL NAME */
+
+.fullTitle h1{
+  font-size:42px;
+  font-weight:900;
+  margin:0;
+  letter-spacing:2px;
+}
+
+/* LOCATION */
+
+.fullTitle p{
+  margin:5px 0;
+  color:#555;
+  font-size:16px;
+}
+
+/* ADMISSION BADGE */
+
+.badge{
+  background:#ff4d00;
+  color:white;
+  padding:6px 14px;
+  border-radius:6px;
+  font-size:14px;
+  font-weight:600;
+}
+
+/* normal links */
+
+.rightNav a{
+  color:white;
+  text-decoration:none;
+  font-weight:500;
+  position:relative;
+  padding:5px 0;
+}
+
+/* ACTIVE TAB */
+
+.activeLink{
+  color:#ffd54f !important;
+}
+
+/* underline animation */
+
+.activeLink::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:3px;
+  background:#ffd54f;
+  left:0;
+  bottom:-6px;
+  border-radius:2px;
+}
+
+
+@media(max-width:768px){
+
+  .topHeader{
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+  }
+
+  .fullTitle h1{
+    font-size:24px;
+  }
+
+  .logo, .saraswati{
+    height:50px;
+  }
+
+}
+

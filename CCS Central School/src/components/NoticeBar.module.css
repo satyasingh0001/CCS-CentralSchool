@@ -1,0 +1,12 @@
+.noticeBar{
+  background:#ffcc00;
+  color:#000;
+  padding:8px;
+  font-weight:600;
+  font-size:14px;
+}
+
+:global(body.dark) .noticeBar{
+  background:#333;
+  color:white;
+}
