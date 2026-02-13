@@ -19,7 +19,8 @@ import t15 from "../assets/teachers/t15.jpeg";
 import t16 from "../assets/teachers/t16.jpeg";
 import g1 from "../assets/teachers/g1.jpeg";
 import d1 from "../assets/teachers/d1.jpeg";
-import h1 from "../assets/teachers/h1.jpeg";
+import d2 from "../assets/teachers/d2.jpeg";
+import d3 from "../assets/teachers/d3.jpeg";
 
 function Teachers() {
   /* SCHOOL LEADERSHIP */
@@ -101,9 +102,11 @@ function Teachers() {
   /* SUPPORT STAFF */
 
   const supportStaff = [
-    { name: "Driver Name", role: "School Driver", img: d1 },
-    { name: "Guard Name", role: "Security Guard", img: g1 },
-    { name: "Helper Name", role: "Support Staff", img: h1 },
+    { name: "Mrs. Vimal G", role: "Campus Security Officer", img: g1 },
+    { name: "Mrs. Mohit G", role: "School Transport Driver", img: d1 },
+    { name: "Mrs. Manoj G", role: "School Transport Driver", img: d2 },
+    { name: "Mrs. Kundan G", role: "School Transport Driver", img: d3 },
+    
   ];
 
   return (
