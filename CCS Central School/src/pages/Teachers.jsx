@@ -102,10 +102,10 @@ function Teachers() {
   /* SUPPORT STAFF */
 
   const supportStaff = [
-    { name: "Mrs. Vimal G", role: "Campus Security Officer", img: g1 },
-    { name: "Mrs. Mohit G", role: "School Transport Driver", img: d1 },
-    { name: "Mrs. Manoj G", role: "School Transport Driver", img: d2 },
-    { name: "Mrs. Kundan G", role: "School Transport Driver", img: d3 },
+    { name: "Mr. Vimal G", role: "Campus Security Officer", img: g1 },
+    { name: "Mr. Mohit G", role: "School Transport Driver", img: d1 },
+    { name: "Mr. Manoj G", role: "School Transport Driver", img: d2 },
+    { name: "Mr. Kundan G", role: "School Transport Driver", img: d3 },
     
   ];
 
@@ -159,3 +159,4 @@ function Teachers() {
 }
 
 export default Teachers;
+
